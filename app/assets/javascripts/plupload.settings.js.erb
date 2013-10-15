@@ -1,14 +1,32 @@
 // Assigns default Plupload settings that work with the asset pipeline.
 (function () {
   var proxied = plupload.Uploader;
-  
-  plupload.Uploader = function (settings) {
+  var isiPad = (/iphone|ipad|ipod/i.test(navigator.userAgent.toLowerCase()));
+  if (isiPad)
+  {
+  	plupload.Uploader = function (settings) {
     settings = $.extend({}, settings, {
       multipart: true,
+      multi_selection: false,
       flash_swf_url: '<%=asset_path("plupload.flash.swf")%>',
       silverlight_xap_url: '<%=asset_path("plupload.silverlight.xap")%>'
     });
     
     return proxied.apply(this, [settings]);
   };
+  }
+  else
+  {
+  	plupload.Uploader = function (settings) {
+    settings = $.extend({}, settings, {
+      multipart: true,
+      multi_selection: true,
+      flash_swf_url: '<%=asset_path("plupload.flash.swf")%>',
+      silverlight_xap_url: '<%=asset_path("plupload.silverlight.xap")%>'
+    });
+    
+    return proxied.apply(this, [settings]);
+  };
+  }
+  
 }());
