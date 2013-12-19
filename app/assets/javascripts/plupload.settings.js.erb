@@ -8,8 +8,8 @@
     settings = $.extend({}, settings, {
       multipart: true,
       multi_selection: false,
-      flash_swf_url: '<%=asset_path("plupload.flash.swf")%>',
-      silverlight_xap_url: '<%=asset_path("plupload.silverlight.xap")%>'
+      flash_swf_url: '<%=asset_path("moxie.swf")%>',
+      silverlight_xap_url: '<%=asset_path("moxie.xap")%>'
     });
     
     return proxied.apply(this, [settings]);
@@ -21,8 +21,8 @@
     settings = $.extend({}, settings, {
       multipart: true,
       multi_selection: true,
-      flash_swf_url: '<%=asset_path("plupload.flash.swf")%>',
-      silverlight_xap_url: '<%=asset_path("plupload.silverlight.xap")%>'
+      flash_swf_url: '<%=asset_path("moxie.swf")%>',
+      silverlight_xap_url: '<%=asset_path("moxie.xap")%>'
     });
     
     return proxied.apply(this, [settings]);
