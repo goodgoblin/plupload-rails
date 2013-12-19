@@ -1101,8 +1101,8 @@ plupload.Uploader = function(settings) {
 		multipart : true,
 		multi_selection : true,
 		file_data_name : 'file',
-		flash_swf_url : 'js/Moxie.swf',
-		silverlight_xap_url : 'js/Moxie.xap',
+		flash_swf_url : 'misc/Moxie.swf',
+		silverlight_xap_url : 'misc/Moxie.xap',
 		send_chunk_number: true // whether to send chunks and chunk numbers, or total and offset bytes
 	}, settings);
 
